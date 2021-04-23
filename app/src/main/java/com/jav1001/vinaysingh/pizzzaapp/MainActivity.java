@@ -9,8 +9,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,12 +39,55 @@ public class MainActivity extends AppCompatActivity {
 
 
         String imageName = intent.getStringExtra("image");
+        String price = intent.getStringExtra("price");
         String PACKAGE_NAME = getApplicationContext().getPackageName();
         int imgId = getResources().getIdentifier(PACKAGE_NAME+":drawable/"+imageName , null, null);
-
-
-
-
+        TextView nameElem = findViewById(R.id.foodElemNameMain);
+        nameElem.setText(name);
+        Button addToCart = findViewById(R.id.addToCartMain);
+        TextView quantity = findViewById(R.id.textViewQuantity);
+        addToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String cartJSON = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("cartitems", "");
+                if( cartJSON!=""){
+                    try {
+                        JSONObject obj = new JSONObject(cartJSON);
+                        JSONArray cartItems = obj.getJSONArray("items");
+                        JSONObject jj = new JSONObject();
+                        jj.put("name",name);
+                        jj.put("price",price);
+                        jj.put("image",imageName);
+                        jj.put("quantity",quantity.getText());
+                        cartItems.put(jj);
+                        JSONObject tempJ = new JSONObject();
+                        tempJ.put("items",cartItems);
+                        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("cartitems", tempJ.toString()).apply();
+                        String objJSON = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("cartitems", "");
+                        Log.d("json",objJSON);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+                else{
+                    JSONObject jj = new JSONObject();
+                    JSONArray cartItems = new JSONArray();
+                    try {
+                        jj.put("name",name);
+                        jj.put("price",price);
+                        jj.put("image",imageName);
+                        jj.put("quantity",quantity.getText());
+                        cartItems.put(jj);
+                        JSONObject tempJ = new JSONObject();
+                        tempJ.put("items",cartItems);
+                        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("cartitems", tempJ.toString()).apply();
+                        String objJSON = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("cartitems", "");
+                        Log.d("json",objJSON);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+            }
+        }});
         setContentView(R.layout.activity_main);
         RecyclerView recyclerViewCat = findViewById(R.id.recyclerView);
         lAdapter = new AddElemAdapter(elemList, this.getApplicationContext());
