@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "173952481721",
+    "project_id": "jucifer-77fe6",
+    "storage_bucket": "jucifer-77fe6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173952481721:android:ab2d9ea1c16bc5aded1e68",
+        "android_client_info": {
+          "package_name": "com.jav1001.vinaysingh.pizzzaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173952481721-ejd1o5qh2visdrka2dapfmchnn9j67r9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnRmHS0MbMBm8w9tAfGuTbuLsnjM_bkXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173952481721-ejd1o5qh2visdrka2dapfmchnn9j67r9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

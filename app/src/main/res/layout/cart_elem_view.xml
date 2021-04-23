@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:layout_margin="8dp"
+    android:background="@color/white"
+    >
+
+
+    <ImageView
+        android:id="@+id/cartfoodhlelem_image"
+        android:layout_width="124dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/p3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cartFoodElemName"
+        android:layout_width="131dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="20dp"
+        android:text="Margherita"
+        android:textColor="#2E2E2E"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.31"
+        app:layout_constraintStart_toEndOf="@+id/cartfoodhlelem_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.097" />
+
+    <TextView
+        android:id="@+id/cartFoodElemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="108dp"
+
+        android:text="x   $25"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.466" />
+
+    <TextView
+        android:id="@+id/cartElemQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/cartElemDecreButton"
+        app:layout_constraintEnd_toStartOf="@+id/cartFoodElemPrice"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/cartfoodhlelem_image"
+        app:layout_constraintTop_toBottomOf="@+id/cartFoodElemName" />
+
+    <Button
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:id="@+id/carElemIncreButton"
+        android:layout_marginStart="68dp"
+        android:background="@drawable/backrect"
+        android:backgroundTint="@color/black"
+        android:text="+"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cartElemDecreButton"
+        app:layout_constraintStart_toEndOf="@+id/cartElemDecreButton"
+        app:layout_constraintTop_toTopOf="@+id/cartElemDecreButton" />
+
+    <Button
+        android:id="@+id/cartElemDecreButton"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/backrect"
+        android:text="-"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

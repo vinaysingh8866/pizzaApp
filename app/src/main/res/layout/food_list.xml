@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="213dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:text="Food Delivery"
+        android:textColor="#3A3838"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="151dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
+        android:text="Ward Gateway Apt. 903"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.019"
+        app:srcCompat="@drawable/chevron_down" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCat"
+        android:layout_width="377dp"
+        android:layout_height="114dp"
+        android:layout_marginStart="34dp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="116dp"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/allFood"
+        android:layout_width="73dp"
+        android:layout_height="91dp"
+        android:src="@drawable/fastfood"
+        app:layout_constraintBottom_toBottomOf="@+id/burger"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/burger" />
+
+    <ImageView
+        android:id="@+id/burger"
+        android:layout_width="73dp"
+        android:layout_height="91dp"
+        android:src="@drawable/burger"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintStart_toEndOf="@+id/allFood"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+
+    <ImageView
+        android:id="@+id/pizza"
+        android:layout_width="73dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="12dp"
+        android:src="@drawable/pizza"
+        app:layout_constraintBottom_toBottomOf="@+id/burger"
+        app:layout_constraintStart_toEndOf="@+id/burger"
+        app:layout_constraintTop_toTopOf="@+id/burger"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewFoodItems"
+        android:layout_width="413dp"
+        android:layout_height="500dp"
+
+        android:layout_marginTop="40dp"
+        android:background="@drawable/backrect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewCat"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/cart_button"
+        android:layout_width="90dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/ic_baseline_food_bank_24"
+        android:backgroundTint="@color/black"
+        android:shadowRadius="20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
