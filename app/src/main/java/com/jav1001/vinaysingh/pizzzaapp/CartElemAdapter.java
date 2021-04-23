@@ -55,6 +55,7 @@ public class CartElemAdapter extends RecyclerView.Adapter<CartElemAdapter.ListVi
         holder.imageView.setImageResource(id);
         holder.itemName.setText(elem.getName());
         holder.itemPrice.setText(elem.getPrice());
+        holder.itemQuantity.setText(elem.getQuantity());
         holder.increItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

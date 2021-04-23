@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                         jj.put("name",name);
                         jj.put("price",price);
                         jj.put("image",imageName);
-                        jj.put("quantity",quantity.getText());
+                        jj.put("quantity",quantity.getText().toString());
                         cartItems.put(jj);
                         JSONObject tempJ = new JSONObject();
                         tempJ.put("items",cartItems);
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                         jj.put("name",name);
                         jj.put("price",price);
                         jj.put("image",imageName);
-                        jj.put("quantity",quantity.getText());
+                        jj.put("quantity",quantity.getText().toString());
                         cartItems.put(jj);
                         JSONObject tempJ = new JSONObject();
                         tempJ.put("items",cartItems);
