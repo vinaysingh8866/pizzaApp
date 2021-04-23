@@ -69,7 +69,7 @@ public class CartElemAdapter extends RecyclerView.Adapter<CartElemAdapter.ListVi
                 int qua = Integer.parseInt(holder.itemQuantity.getText().toString());
                 if(qua==1){
 
-                    cartElemList.remove(0);
+                    //cartElemList.remove(0);
 
                     //cartElemList.notify();
                 }

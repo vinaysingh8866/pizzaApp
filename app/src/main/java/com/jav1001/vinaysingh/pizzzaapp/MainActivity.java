@@ -42,9 +42,23 @@ public class MainActivity extends AppCompatActivity {
         String price = intent.getStringExtra("price");
         String PACKAGE_NAME = getApplicationContext().getPackageName();
         int imgId = getResources().getIdentifier(PACKAGE_NAME+":drawable/"+imageName , null, null);
+
+        setContentView(R.layout.activity_main);
+        RecyclerView recyclerViewCat = findViewById(R.id.recyclerView);
+        lAdapter = new AddElemAdapter(elemList, this.getApplicationContext());
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        mLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerViewCat.setLayoutManager(mLayoutManager);
+        recyclerViewCat.setItemAnimator(new DefaultItemAnimator());
+        recyclerViewCat.setAdapter(lAdapter);
+
+        ImageView imageView = findViewById(R.id.imageMainViewPizza);
+
         TextView nameElem = findViewById(R.id.foodElemNameMain);
         nameElem.setText(name);
         Button addToCart = findViewById(R.id.addToCartMain);
+        Button incre = findViewById(R.id.increButtonMain);
+
         TextView quantity = findViewById(R.id.textViewQuantity);
         addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,19 +100,21 @@ public class MainActivity extends AppCompatActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
+                }
+            }});
+        incre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                quantity.setText(Integer.parseInt(quantity.getText().toString())+1+"");
             }
-        }});
-        setContentView(R.layout.activity_main);
-        RecyclerView recyclerViewCat = findViewById(R.id.recyclerView);
-        lAdapter = new AddElemAdapter(elemList, this.getApplicationContext());
-        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        mLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        recyclerViewCat.setLayoutManager(mLayoutManager);
-        recyclerViewCat.setItemAnimator(new DefaultItemAnimator());
-        recyclerViewCat.setAdapter(lAdapter);
-
-        ImageView imageView = findViewById(R.id.imageMainViewPizza);
-
+        });
+        Button decre = findViewById(R.id.decreButtonMain);
+        decre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                quantity.setText(Integer.parseInt(quantity.getText().toString())-1+"");
+            }
+        });
         Log.d("imagename", String.valueOf(imgId));
         imageView.setImageResource(imgId);
 
